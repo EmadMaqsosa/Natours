@@ -1,0 +1,169 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin pic {
+  position: absolute;
+  z-index: 0;
+  width: 55%;
+  outline-offset: 0.7rem;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  box-shadow: 0rem 1.5rem 4rem rgba($black-color, 0.4);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+@mixin pic-ho {
+  z-index: 1;
+  outline: 4px solid $color-primary;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transform: scale(1.15) translateY(-0.7rem);
+  -webkit-transform: scale(1.15) translateY(-0.7rem);
+  -moz-transform: scale(1.15) translateY(-0.7rem);
+  -ms-transform: scale(1.15) translateY(-0.7rem);
+  -o-transform: scale(1.15) translateY(-0.7rem);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  box-shadow: 0rem 2.5rem 4rem rgba($black-color, 0.5);
+}
+
+@mixin properties {
+  display: inline-block;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+}
+
+@mixin position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+@mixin linear($bg) {
+  @if $bg == navigation {
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+
+  @if $bg == grad-one {
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+  @if $bg == grad-two {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
+}
+
+@mixin linear-image($img) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    $img;
+  -webkit-background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    $img;
+}
+
+@mixin card-pic($col1, $col2, $pic) {
+  background-image: linear-gradient(to right bottom, $col1, $col2), $pic;
+  -webkit-background-image: linear-gradient(to right bottom, $col1, $col2), $pic;
+}
+
+@mixin grad-s($col1, $col2) {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($col1, 0.85),
+    rgba($col2, 0.85)
+  );
+  -webkit-background-image: linear-gradient(
+    to right bottom,
+    rgba($col1, 0.85),
+    rgba($col2, 0.85)
+  );
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == popup {
+    @media (max-width: 100em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-disktop {
+    @media (max-width: 112.5em) {
+      @content;
+    }
+  }
+}
