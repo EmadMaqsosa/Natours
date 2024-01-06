@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  height: 95vh;
+  @include linear-image (url(../img/hero.jpg));
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  -o-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  -ms-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+  }
+
+  @include respond(tab-port) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -o-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -ms-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -moz-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &_logo-box {
+    position: absolute;
+    top: 7rem;
+    left: 7rem;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      left: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 4rem;
+      left: 4rem;
+    }
+  }
+
+  &_logo {
+    height: 3.5rem;
+  }
+
+  &_text-box {
+    @include position;
+    text-align: center;
+  }
+}
